@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:windy/controller/global_controller.dart';
 import 'package:windy/widgets/current_weather.dart';
 import 'package:windy/widgets/header.dart';
+import 'package:windy/widgets/hourly_weather_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -29,6 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
                  const HeaderWidget(),
                 //Current temp
                 CurrentWeather(weaterDataCurrent: globalController.getData().getCurrentWeather()),
+                SizedBox(height: 15.w),
+                HourlyWeather(weatherDataHourly: globalController.getData().getHourlyWeather()),
               ],
             ),
           )),
