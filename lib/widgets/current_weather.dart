@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import 'package:windy/model/weather_data_current.dart';
 import 'package:windy/utils/custom_colors.dart';
 
 class CurrentWeather extends StatelessWidget {
-  final WeaterDataCurrent weaterDataCurrent;
+  final WeatherDataCurrent weaterDataCurrent;
 
   const CurrentWeather({Key? key, required this.weaterDataCurrent})
       : super(key: key);
@@ -13,10 +14,14 @@ class CurrentWeather extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Image.asset(
-          "assets/weather/${weaterDataCurrent.current.weather![0].icon}.png",
-          width: 100.w,
-          height: 100.w,
+        // Image.asset(
+        //   "assets/weather/${weaterDataCurrent.current.weather![0].icon}.png",
+        //   width: 100.w,
+        //   height: 100.w,
+        // ),
+        Lottie.asset("assets/animations/${weaterDataCurrent.current.weather![0].icon}.json",
+          width: 145.w,
+          height: 145.w,
         ),
         Container(
           height: 50.w,
@@ -28,7 +33,7 @@ class CurrentWeather extends StatelessWidget {
           TextSpan(
             text: "${weaterDataCurrent.current.temp!.toInt()}°",
             style: TextStyle(
-                fontSize: 68.sp,
+                fontSize: 60.sp,
                 height: 1.sp,
                 fontFamily: "Poppins",
                 fontWeight: FontWeight.w600,
@@ -38,7 +43,7 @@ class CurrentWeather extends StatelessWidget {
               TextSpan(
                 text: "${weaterDataCurrent.current.weather![0].description}",
                 style: TextStyle(
-                    fontSize: 14.sp,
+                    fontSize: 13.sp,
                     height: 1.sp,
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w400,

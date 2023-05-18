@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:windy/controller/global_controller.dart';
 import 'package:windy/model/weather_data_hourly.dart';
 import 'package:windy/utils/custom_colors.dart';
@@ -68,7 +69,7 @@ class HourlyWeather extends StatelessWidget {
         fontSize: 18.sp,
         fontWeight: FontWeight.w500,
         height: 1.sp, fontFamily: "Poppins",
-        color: Colors.grey[700]
+        color: CustomColors.textColorBlack
     ),
       textAlign: TextAlign.center,)
           ),
@@ -116,10 +117,13 @@ class HourlyDetails extends StatelessWidget {
            ),
          ),
          Container(
-           margin: EdgeInsets.only(top: 5.w),
-           width: 40.w,
-           height: 40.w,
-           child: Image.asset("assets/weather/$weatherIcon.png"),
+           margin: EdgeInsets.only(top: 5.w, bottom: 8.w),
+           width: 60.w,
+           height: 60.w,
+           // child: Image.asset("assets/weather/$weatherIcon.png"),
+           child: Lottie.asset("assets/animations/$weatherIcon.json",
+
+           ),
 
          ),
          Container(
